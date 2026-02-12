@@ -9,6 +9,12 @@ import { FeatureCardsSection } from "./feature-cards-section"
 import { AISection } from "./ai-section"
 import { ProductDirectionSection } from "./product-direction-section"
 import { WorkflowsSection } from "./workflows-section"
+import { BeforeAfterSection } from "./before-after-section"
+import { VideoSection } from "./video-section"
+import { TestimonialsSection } from "./testimonials-section"
+import { HowItWorksSection } from "./how-it-works-section"
+import { PricingSection } from "./pricing-section"
+import { FAQSection } from "./faq-section"
 import { CTASection } from "./cta-section"
 import { Footer } from "./footer"
 
@@ -48,7 +54,7 @@ export function Hero3DStage() {
             transform: "translate(-50%, -30%)",
             width: "1200px",
             height: "800px",
-            background: "radial-gradient(ellipse at center, rgba(99, 102, 241, 0.08) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse at center, rgba(255, 255, 255, 0.04) 0%, transparent 70%)",
           }}
         />
 
@@ -63,7 +69,7 @@ export function Hero3DStage() {
                 transition={{ duration: 0.6 }}
                 className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-[1.1] text-balance"
               >
-                Sprint is a purpose-built tool for planning and building products
+                Stop managing chaos. Start managing a career.
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -71,23 +77,32 @@ export function Hero3DStage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="mt-6 text-lg text-zinc-400"
               >
-                Meet the system for modern software development.
+                The all-in-one Notion workspace for DJs and producers who are serious about their craft.
                 <br />
-                Streamline issues, projects, and product roadmaps.
+                Releases, gigs, finances, content, and creative workflow — organized in one place.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="mt-8 flex items-center gap-6"
+                className="mt-8 flex flex-col gap-4"
               >
-                <button className="px-5 py-2.5 bg-white text-zinc-900 font-medium rounded-lg hover:bg-zinc-100 transition-colors text-sm">
-                  Start building
-                </button>
-                <button className="text-zinc-300 font-medium hover:text-white transition-colors flex items-center gap-2 text-sm">
-                  <span className="text-zinc-500">New:</span> Sprint agent for Slack
-                  <span aria-hidden="true">→</span>
-                </button>
+                <div className="flex items-center gap-6">
+                  <a
+                    href="#pricing"
+                    className="px-5 py-2.5 text-zinc-900 font-medium rounded-lg transition-colors text-sm bg-white hover:bg-zinc-200"
+                  >
+                    Get ArtistOS — €49
+                  </a>
+                  <a href="#demo" className="text-zinc-300 font-medium hover:text-white transition-colors flex items-center gap-2 text-sm">
+                    Watch the walkthrough
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+                <div className="flex items-center gap-1 text-sm text-zinc-400">
+                  <span className="text-white">★★★★★</span>
+                  <span>Trusted by 100+ DJs & producers</span>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -166,6 +181,12 @@ export function Hero3DStage() {
           <AISection />
           <ProductDirectionSection />
           <WorkflowsSection />
+          <BeforeAfterSection />
+          <VideoSection />
+          <TestimonialsSection />
+          <HowItWorksSection />
+          <PricingSection />
+          <FAQSection />
           <CTASection />
           <Footer />
         </div>

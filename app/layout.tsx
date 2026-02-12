@@ -7,9 +7,9 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'ArtistOS by Base Studios — The Notion Workspace for DJs & Producers',
+  description: 'Organize your releases, gigs, finances, and creative workflow in one Notion workspace. Built for DJs and music producers.',
+  generator: 'Base Studios',
   icons: {
     icon: [
       {

@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Triangle } from "lucide-react"
 
 export function LogoCloud() {
   return (
@@ -15,7 +14,7 @@ export function LogoCloud() {
             transition={{ duration: 0.6 }}
             className="text-lg text-zinc-300 mb-2"
           >
-            Powering the world's best product teams.
+            Trusted by 100+ DJs & producers
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -24,7 +23,7 @@ export function LogoCloud() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg text-zinc-500 mb-16"
           >
-            From next-gen startups to established enterprises.
+            From bedroom producers to touring artists.
           </motion.p>
 
           <motion.div
@@ -32,23 +31,54 @@ export function LogoCloud() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative group cursor-pointer"
+            className="flex flex-col items-center gap-8"
           >
-            {/* Logo grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16 gap-y-10 items-center justify-items-center transition-all duration-300 group-hover:blur-[2.5px] group-hover:opacity-50">
-              {[...Array(8)].map((_, i) => (
-                <div key={i} className="text-white font-semibold text-xl flex items-center gap-2">
-                  <Triangle className="w-5 h-5 fill-white" />
-                  Vercel
-                </div>
-              ))}
+            {/* Star rating */}
+            <div className="flex items-center gap-2">
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <span className="text-zinc-400 text-sm ml-2">5.0 from 50+ reviews</span>
             </div>
 
-            {/* Hover overlay button */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <div className="px-5 py-2.5 bg-zinc-800/80 backdrop-blur-sm border border-zinc-700 rounded-full text-sm text-zinc-300 flex items-center gap-2">
-                Meet our customers
-                <span aria-hidden="true">›</span>
+            {/* Platform icons */}
+            <div className="flex items-center gap-12 opacity-60">
+              {/* Beatport-style icon */}
+              <div className="flex items-center gap-2 text-zinc-400">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
+                  <circle cx="12" cy="12" r="4" fill="currentColor" />
+                </svg>
+                <span className="text-sm font-medium">Beatport</span>
+              </div>
+              {/* Spotify-style icon */}
+              <div className="flex items-center gap-2 text-zinc-400">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M8 10c3-1 6-1 8 0" stroke="#09090B" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+                  <path d="M7 13c4-1 7-1 10 0" stroke="#09090B" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+                  <path d="M9 16c2.5-0.5 5-0.5 7 0" stroke="#09090B" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+                </svg>
+                <span className="text-sm font-medium">Spotify</span>
+              </div>
+              {/* SoundCloud-style icon */}
+              <div className="flex items-center gap-2 text-zinc-400">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 14v4M6 12v6M9 10v8M12 8v10M15 11v7M18 9v9M21 12v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
+                </svg>
+                <span className="text-sm font-medium">SoundCloud</span>
+              </div>
+              {/* YouTube-style icon */}
+              <div className="flex items-center gap-2 text-zinc-400">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <rect x="2" y="5" width="20" height="14" rx="3" />
+                  <path d="M10 9l5 3-5 3V9z" fill="#09090B" />
+                </svg>
+                <span className="text-sm font-medium">YouTube</span>
               </div>
             </div>
           </motion.div>
