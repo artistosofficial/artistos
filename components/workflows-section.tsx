@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronLeft, ChevronRight, Music, Calendar, DollarSign, Share2, Lightbulb, Users, Target, Piano, Mic, Headphones } from "lucide-react"
+import { ChevronLeft, ChevronRight, Music, Calendar, DollarSign, Share2, Lightbulb, Users, Target, Piano, Mic, Headphones, Sparkles, Disc3, Palette, Library, Plane, FolderKanban } from "lucide-react"
 
 const moduleCards = [
   {
@@ -10,13 +10,15 @@ const moduleCards = [
     title: "Track every single, EP, album from idea to release",
     icon: Music,
     color: "white",
+    gpt: "Release GPT included",
   },
   {
     id: 2,
-    category: "Gig Manager",
+    category: "Bookings",
     title: "Bookings, contracts, riders, and payment tracking",
     icon: Calendar,
     color: "blue",
+    gpt: "Booking GPT included",
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ const moduleCards = [
     title: "Income, expenses, and P&L at a glance",
     icon: DollarSign,
     color: "emerald",
+    gpt: "Finance GPT included",
   },
   {
     id: 4,
@@ -31,27 +34,71 @@ const moduleCards = [
     title: "Plan social media around your releases",
     icon: Share2,
     color: "pink",
+    gpt: "Content GPT included",
   },
   {
     id: 5,
-    category: "Creative Vault",
-    title: "Ideas, samples, sketches all in one place",
+    category: "Music Production",
+    title: "Track projects from idea to release with sessions, stems, and feedback",
     icon: Lightbulb,
     color: "yellow",
+    gpt: "Production GPT included",
   },
   {
     id: 6,
-    category: "Network CRM",
+    category: "Booking & Contacts",
     title: "Promoters, labels, collaborators organized",
     icon: Users,
     color: "orange",
+    gpt: "Booking GPT included",
   },
   {
     id: 7,
-    category: "Goal Tracker",
+    category: "Goals & Milestones",
     title: "Quarterly goals and career milestones",
     icon: Target,
     color: "cyan",
+    gpt: "Strategy GPT included",
+  },
+  {
+    id: 8,
+    category: "A&R & Labels",
+    title: "Track submissions, label contacts, and A&R feedback",
+    icon: Disc3,
+    color: "white",
+    gpt: "A&R GPT included",
+  },
+  {
+    id: 9,
+    category: "Brand & Suppliers",
+    title: "Designers, photographers, merch vendors all in one place",
+    icon: Palette,
+    color: "white",
+    gpt: "Brand GPT included",
+  },
+  {
+    id: 10,
+    category: "Music Library",
+    title: "Catalog every track, remix, and version with metadata",
+    icon: Library,
+    color: "white",
+    gpt: "Library GPT included",
+  },
+  {
+    id: 11,
+    category: "Travel",
+    title: "Flights, hotels, and logistics for every gig and tour",
+    icon: Plane,
+    color: "white",
+    gpt: "Travel GPT included",
+  },
+  {
+    id: 12,
+    category: "Side Projects",
+    title: "Aliases, collabs, and side hustles tracked separately",
+    icon: FolderKanban,
+    color: "white",
+    gpt: "Projects GPT included",
   },
 ]
 
@@ -191,6 +238,107 @@ function GoalsMockup() {
   )
 }
 
+function ARLabelsMockup() {
+  return (
+    <div className="flex flex-col gap-2 p-4 h-full">
+      <div className="space-y-2">
+        {[
+          { label: "Defected Records", status: "Sent" },
+          { label: "Afterlife", status: "Follow up" },
+          { label: "Drumcode", status: "Accepted" },
+        ].map((item) => (
+          <div key={item.label} className="flex items-center justify-between bg-zinc-800/50 rounded px-2 py-1.5">
+            <span className="text-xs text-zinc-300">{item.label}</span>
+            <span className={`text-[10px] ${item.status === "Accepted" ? "text-white" : "text-zinc-500"}`}>{item.status}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function BrandSuppliersMockup() {
+  return (
+    <div className="flex flex-col gap-2 p-4 h-full">
+      {[
+        { name: "Studio Visuals Co.", type: "Designer" },
+        { name: "Merch Factory EU", type: "Merch vendor" },
+        { name: "Lens & Light", type: "Photographer" },
+      ].map((item) => (
+        <div key={item.name} className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full bg-zinc-700 flex items-center justify-center text-[10px] text-zinc-400">
+            {item.name[0]}
+          </div>
+          <div>
+            <div className="text-xs text-zinc-300">{item.name}</div>
+            <div className="text-[10px] text-zinc-500">{item.type}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function MusicLibraryMockup() {
+  return (
+    <div className="flex flex-col gap-2 p-4 h-full">
+      <div className="space-y-2">
+        {[
+          { track: "Midnight Run", bpm: "126", key: "Am" },
+          { track: "Deep State (Remix)", bpm: "130", key: "Fm" },
+          { track: "Cascade", bpm: "124", key: "Cm" },
+        ].map((item) => (
+          <div key={item.track} className="bg-zinc-800/50 rounded px-2 py-1.5">
+            <div className="text-xs text-zinc-300">{item.track}</div>
+            <div className="flex gap-3 text-[10px] text-zinc-500">
+              <span>{item.bpm} BPM</span>
+              <span>{item.key}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function TravelMockup() {
+  return (
+    <div className="flex flex-col gap-2 p-4 h-full">
+      <div className="space-y-2">
+        {[
+          { route: "BER → AMS", date: "Mar 14", type: "Flight" },
+          { route: "Hotel Central", date: "Mar 14-16", type: "Stay" },
+        ].map((item) => (
+          <div key={item.route} className="bg-zinc-800/50 rounded px-2 py-1.5">
+            <div className="flex justify-between text-xs">
+              <span className="text-zinc-300">{item.route}</span>
+              <span className="text-zinc-500">{item.type}</span>
+            </div>
+            <span className="text-[10px] text-zinc-500">{item.date}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function SideProjectsMockup() {
+  return (
+    <div className="flex flex-col gap-2 p-4 h-full">
+      {[
+        { name: "Dark alias", tracks: "4 tracks" },
+        { name: "Collab w/ JVNE", tracks: "2 tracks" },
+        { name: "Ambient side", tracks: "7 tracks" },
+      ].map((item) => (
+        <div key={item.name} className="flex items-center justify-between bg-zinc-800/30 rounded px-2 py-1.5">
+          <span className="text-xs text-zinc-400">{item.name}</span>
+          <span className="text-[10px] text-zinc-500">{item.tracks}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function CardMockup({ type }: { type: number }) {
   switch (type) {
     case 1:
@@ -207,6 +355,16 @@ function CardMockup({ type }: { type: number }) {
       return <CRMMockup />
     case 7:
       return <GoalsMockup />
+    case 8:
+      return <ARLabelsMockup />
+    case 9:
+      return <BrandSuppliersMockup />
+    case 10:
+      return <MusicLibraryMockup />
+    case 11:
+      return <TravelMockup />
+    case 12:
+      return <SideProjectsMockup />
     default:
       return null
   }
@@ -241,7 +399,7 @@ export function WorkflowsSection() {
             {/* Violet indicator */}
             <div className="flex items-center gap-2 mb-6">
               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#FFFFFF' }} />
-              <span className="text-sm text-zinc-400">7 integrated modules</span>
+              <span className="text-sm text-zinc-400">12 integrated modules</span>
               <ChevronRight className="w-4 h-4 text-zinc-600" />
             </div>
 
@@ -285,7 +443,7 @@ export function WorkflowsSection() {
 
                     {/* Card footer */}
                     <div className="p-4 border-t border-zinc-800/30">
-                      <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center justify-between gap-3 mb-2">
                         {/* Text content */}
                         <div className="flex-1 min-w-0">
                           <p className="text-xs text-zinc-500 mb-1">{card.category}</p>
@@ -298,6 +456,11 @@ export function WorkflowsSection() {
                           <Icon className="w-4 h-4" />
                         </button>
                       </div>
+                      {/* GPT badge */}
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-zinc-700 bg-zinc-800/50 text-[11px] font-medium text-zinc-400">
+                        <Sparkles className="w-3 h-3" />
+                        {card.gpt}
+                      </span>
                     </div>
                   </div>
                 </div>

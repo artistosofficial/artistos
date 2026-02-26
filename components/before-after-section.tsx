@@ -13,11 +13,11 @@ const beforeItems = [
 ]
 
 const afterItems = [
-  "Every idea captured in your Creative Vault",
+  "Every idea captured in your Music Production vault",
   "Releases planned weeks ahead with clear checklists",
   "Real-time financial dashboard with P&L",
   "Content calendar synced to your releases",
-  "Network CRM for every industry contact",
+  "Booking & Contacts CRM for every industry contact",
   "Quarterly goals with progress tracking",
 ]
 

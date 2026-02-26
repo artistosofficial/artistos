@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Check } from "lucide-react"
 
 const features = [
-  "7 integrated modules (Release Pipeline, Gig Manager, etc.)",
+  "12 integrated modules — each with a custom GPT assistant",
   "Lifetime access — pay once, use forever",
   "All future updates included",
   "Works with free or paid Notion",

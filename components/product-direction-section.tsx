@@ -301,7 +301,7 @@ export function ProductDirectionSection() {
             <p className="text-zinc-500 text-sm leading-relaxed">Track every release from idea to distribution.</p>
           </div>
 
-          {/* Gig Manager */}
+          {/* Bookings */}
           <div>
             <div className="flex items-center gap-2 mb-3">
               <svg
@@ -314,7 +314,7 @@ export function ProductDirectionSection() {
                 <rect x="3" y="4" width="14" height="12" rx="2" />
                 <path d="M3 8h14M7 4v16" />
               </svg>
-              <span className="text-zinc-200 font-medium">Gig Manager</span>
+              <span className="text-zinc-200 font-medium">Bookings</span>
             </div>
             <p className="text-zinc-500 text-sm leading-relaxed">Bookings, contracts, riders, and payments.</p>
           </div>
@@ -331,15 +331,15 @@ export function ProductDirectionSection() {
             <p className="text-zinc-500 text-sm leading-relaxed">Plan social content around your releases.</p>
           </div>
 
-          {/* Creative Vault */}
+          {/* Music Production */}
           <div>
             <div className="flex items-center gap-2 mb-3">
               <svg className="w-5 h-5 text-zinc-400" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M10 2L2 7v6l8 5 8-5V7l-8-5z" stroke="currentColor" strokeWidth="1.5" fill="none" />
               </svg>
-              <span className="text-zinc-200 font-medium">Creative Vault</span>
+              <span className="text-zinc-200 font-medium">Music Production</span>
             </div>
-            <p className="text-zinc-500 text-sm leading-relaxed">Store ideas, samples, and project notes.</p>
+            <p className="text-zinc-500 text-sm leading-relaxed">Track projects, sessions, stems, and feedback.</p>
           </div>
         </div>
       </div>

@@ -1,16 +1,21 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ChevronRight, Check, Music, Calendar, DollarSign, Share2, Lightbulb, Users, Target } from "lucide-react"
+import { ChevronRight, Check, Music, Calendar, DollarSign, Share2, Lightbulb, Users, Target, Disc3, Palette, Library, Plane, FolderKanban } from "lucide-react"
 
 const modules = [
-  { name: "Release Pipeline", icon: Music, selected: true },
-  { name: "Gig Manager", icon: Calendar, selected: false },
-  { name: "Financial Dashboard", icon: DollarSign, selected: false },
-  { name: "Content Calendar", icon: Share2, selected: false },
-  { name: "Creative Vault", icon: Lightbulb, selected: false },
-  { name: "Network CRM", icon: Users, selected: false },
-  { name: "Goal Tracker", icon: Target, selected: false },
+  { name: "Release Pipeline", icon: Music, selected: true, gpts: 1 },
+  { name: "Bookings", icon: Calendar, selected: false, gpts: 2 },
+  { name: "Financial Dashboard", icon: DollarSign, selected: false, gpts: 2 },
+  { name: "Content Calendar", icon: Share2, selected: false, gpts: 6 },
+  { name: "Music Production", icon: Lightbulb, selected: false, gpts: 1 },
+  { name: "Booking & Contacts", icon: Users, selected: false, gpts: 2 },
+  { name: "Goals & Milestones", icon: Target, selected: false, gpts: 1 },
+  { name: "A&R & Labels", icon: Disc3, selected: false, gpts: 2 },
+  { name: "Brand & Suppliers", icon: Palette, selected: false, gpts: 1 },
+  { name: "Music Library", icon: Library, selected: false, gpts: 1 },
+  { name: "Travel", icon: Plane, selected: false, gpts: 1 },
+  { name: "Side Projects", icon: FolderKanban, selected: false, gpts: 2 },
 ]
 
 export function AISection() {
@@ -34,7 +39,7 @@ export function AISection() {
             className="flex items-center gap-2 mb-6"
           >
             <div className="w-2 h-2 rounded-full bg-white" />
-            <span className="text-zinc-400 text-sm">7 integrated modules</span>
+            <span className="text-zinc-400 text-sm">12 integrated modules</span>
             <ChevronRight className="w-4 h-4 text-zinc-500" />
           </motion.div>
 
@@ -63,7 +68,7 @@ export function AISection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-zinc-400 max-w-md mb-8"
           >
-            <span className="text-white font-medium">One workspace, seven modules.</span> Each one designed for a specific
+            <span className="text-white font-medium">One workspace, twelve modules.</span> Each one designed for a specific
             part of your music business, all connected so nothing falls through the cracks.
           </motion.p>
 
@@ -138,8 +143,9 @@ export function AISection() {
                 />
 
                 {/* Input field */}
-                <div className="bg-zinc-800/50 border border-zinc-700 rounded-t-xl px-5 py-4">
+                <div className="bg-zinc-800/50 border border-zinc-700 rounded-t-xl px-5 py-4 flex items-center justify-between">
                   <span className="text-zinc-500 italic">Choose a module...</span>
+                  <span className="text-zinc-600 text-xs">12 modules · 20+ GPTs</span>
                 </div>
 
                 {/* Dropdown options */}
@@ -183,7 +189,12 @@ export function AISection() {
                               {module.name}
                             </span>
                           </div>
-                          {module.selected && <Check className="w-4 h-4 text-white" />}
+                          <div className="flex items-center gap-2">
+                            <span className={`text-[10px] px-1.5 py-0.5 rounded ${module.selected ? "bg-zinc-600/50 text-zinc-300" : "bg-zinc-800/50 text-zinc-500"}`}>
+                              {module.gpts === 1 ? "1 GPT" : `${module.gpts} GPTs`}
+                            </span>
+                            {module.selected && <Check className="w-4 h-4 text-white" />}
+                          </div>
                         </div>
                       </div>
                     )

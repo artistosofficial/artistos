@@ -17,6 +17,11 @@ import {
   MoreHorizontal,
   Star,
   Clock,
+  Disc3,
+  Palette,
+  Library,
+  Plane,
+  FolderKanban,
 } from "lucide-react"
 
 export function DashboardMockup() {
@@ -79,33 +84,45 @@ export function DashboardMockup() {
           </div>
         </div>
 
-        {/* Main nav - ArtistOS Modules */}
+        {/* Main nav - Pinned */}
         <div className="px-3 space-y-0.5">
           <NavItem icon={Music} label="Release Pipeline" badge={2} active />
-          <NavItem icon={Calendar} label="Gig Manager" />
+          <NavItem icon={Calendar} label="Bookings" />
         </div>
 
-        {/* Workspace section */}
+        {/* Business section */}
         <div className="mt-5 px-3">
           <div className="px-2 py-1 text-[10px] text-zinc-500 font-medium uppercase tracking-wider flex items-center gap-1">
-            Modules
+            Business
           </div>
           <div className="space-y-0.5 mt-1">
             <NavItem icon={DollarSign} label="Financial Dashboard" hasSubmenu />
-            <NavItem icon={Share2} label="Content Calendar" hasSubmenu />
-            <NavItem icon={Lightbulb} label="Creative Vault" hasSubmenu />
-            <NavItem icon={Users} label="Network CRM" hasSubmenu />
+            <NavItem icon={Users} label="Booking & Contacts" hasSubmenu />
+            <NavItem icon={Disc3} label="A&R & Labels" hasSubmenu />
           </div>
         </div>
 
-        {/* Goals section */}
-        <div className="mt-5 px-3">
+        {/* Creative section */}
+        <div className="mt-3 px-3">
           <div className="px-2 py-1 text-[10px] text-zinc-500 font-medium uppercase tracking-wider flex items-center gap-1">
-            Goals
+            Creative
           </div>
           <div className="space-y-0.5 mt-1">
-            <NavItem icon={Target} label="Q1 2025" color="text-white" />
-            <NavItem icon={Star} label="Career Milestones" color="text-zinc-400" />
+            <NavItem icon={Lightbulb} label="Music Production" hasSubmenu />
+            <NavItem icon={Library} label="Music Library" hasSubmenu />
+            <NavItem icon={Share2} label="Content Calendar" hasSubmenu />
+          </div>
+        </div>
+
+        {/* Performance section */}
+        <div className="mt-3 px-3">
+          <div className="px-2 py-1 text-[10px] text-zinc-500 font-medium uppercase tracking-wider flex items-center gap-1">
+            Performance
+          </div>
+          <div className="space-y-0.5 mt-1">
+            <NavItem icon={Target} label="Goals & Milestones" hasSubmenu />
+            <NavItem icon={Plane} label="Travel" hasSubmenu />
+            <NavItem icon={FolderKanban} label="Side Projects" hasSubmenu />
           </div>
         </div>
 

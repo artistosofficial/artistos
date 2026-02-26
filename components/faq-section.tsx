@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "What exactly am I buying?",
-    answer: "You're buying a complete Notion template (workspace) that you duplicate to your own account. It includes 7 integrated modules: Release Pipeline, Gig Manager, Financial Dashboard, Content Calendar, Creative Vault, Network CRM, and Goal Tracker.",
+    answer: "You're buying a complete Notion template (workspace) that you duplicate to your own account. It includes 12 integrated modules covering every area of your music career: Release Pipeline, Bookings, Financial Dashboard, Content Calendar, Music Production, Booking & Contacts, Goals & Milestones, A&R & Labels, Brand & Suppliers, Music Library, Travel, and Side Projects. Each module comes with its own custom GPT assistant.",
   },
   {
     question: "Can I customize it?",

@@ -4,22 +4,22 @@ import { motion } from "framer-motion"
 
 const testimonials = [
   {
-    quote: "Finally, a system that actually makes sense for how I work. I went from chaos to having a real overview of my career in one weekend.",
-    author: "Marco V.",
-    role: "Techno Producer",
+    quote: "I used to track bookings in my Notes app and gig fees in my head. ArtistOS changed everything. I followed up on a venue I'd forgotten about for 3 months and landed a residency. The booking module alone is worth it.",
+    author: "Marco R.",
+    role: "DJ & Producer, Berlin",
     avatar: "M",
   },
   {
-    quote: "The financial dashboard alone is worth it. I had no idea where my money was going until I started tracking everything in ArtistOS.",
-    author: "Sarah K.",
-    role: "DJ & Producer",
+    quote: "The content GPT is insane. I described my sound in 2 sentences and it gave me 3 months of content ideas that actually fit my brand. I went from posting randomly to having a real strategy for the first time.",
+    author: "Sofia K.",
+    role: "Electronic Producer, Barcelona",
     avatar: "S",
   },
   {
-    quote: "I've tried so many productivity systems. This is the only one that actually fits how producers think and work.",
-    author: "David L.",
-    role: "House Music Artist",
-    avatar: "D",
+    quote: "I've been releasing music for 4 years and never had a proper release workflow. ArtistOS showed me how much I was winging it. My last EP launch was the most organized thing I've ever done. It showed.",
+    author: "Jorge L.",
+    role: "DJ & Label Owner, Madrid",
+    avatar: "J",
   },
 ]
 
@@ -51,7 +51,7 @@ export function TestimonialsSection() {
               lineHeight: 1.1,
             }}
           >
-            What producers are saying
+            Artists who stopped improvising.
           </h2>
         </motion.div>
 

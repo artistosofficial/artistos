@@ -8,8 +8,11 @@ import { LogoCloud } from "./logo-cloud"
 import { FeatureCardsSection } from "./feature-cards-section"
 import { AISection } from "./ai-section"
 import { ProductDirectionSection } from "./product-direction-section"
+import { BookingsARSection } from "./bookings-ar-section"
+import { ContentAISection } from "./content-ai-section"
 import { WorkflowsSection } from "./workflows-section"
 import { BeforeAfterSection } from "./before-after-section"
+import { WhoItsForSection } from "./who-its-for-section"
 import { VideoSection } from "./video-section"
 import { TestimonialsSection } from "./testimonials-section"
 import { HowItWorksSection } from "./how-it-works-section"
@@ -63,6 +66,14 @@ export function Hero3DStage() {
           {/* Hero text - contained and centered */}
           <div className="w-full flex justify-center px-6 mt-16">
             <div className="w-full max-w-4xl">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-zinc-700 bg-zinc-800/50 mb-8"
+              >
+                <span className="text-xs font-semibold tracking-widest uppercase text-zinc-300">Built for serious artists</span>
+              </motion.div>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -180,8 +191,11 @@ export function Hero3DStage() {
           <FeatureCardsSection />
           <AISection />
           <ProductDirectionSection />
+          <BookingsARSection />
+          <ContentAISection />
           <WorkflowsSection />
           <BeforeAfterSection />
+          <WhoItsForSection />
           <VideoSection />
           <TestimonialsSection />
           <HowItWorksSection />
