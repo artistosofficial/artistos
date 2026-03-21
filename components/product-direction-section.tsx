@@ -4,7 +4,7 @@ import { ChevronRight, Check } from "lucide-react"
 
 export function ProductDirectionSection() {
   return (
-    <section className="relative py-40 px-6 md:px-12 lg:px-24">
+    <section className="relative py-40 px-6 md:px-12 lg:px-24" style={{ backgroundColor: "#09090B" }}>
       {/* Gradient overlay at top */}
       <div
         className="absolute inset-x-0 top-0 pointer-events-none"
@@ -17,7 +17,7 @@ export function ProductDirectionSection() {
       <div className="max-w-6xl mx-auto">
         {/* Section label */}
         <div className="flex items-center gap-2 mb-6">
-          <div className="w-3 h-3 rounded-full bg-white" />
+          <div className="w-3 h-3 rounded-full bg-[#E85002]" />
           <span className="text-zinc-400 text-sm">Release management</span>
           <ChevronRight className="w-4 h-4 text-zinc-500" />
         </div>
@@ -182,7 +182,7 @@ export function ProductDirectionSection() {
           <div className="border-t border-r border-b border-zinc-800 pt-10 pr-10 pb-16">
             <h3 className="text-xl font-medium text-zinc-200 mb-3">Every release, tracked end-to-end</h3>
             <p className="text-zinc-500 text-base leading-relaxed mb-8">
-              From first idea to Spotify link — every step documented, every deadline visible, nothing forgotten.
+              From first idea to Spotify link. Every step documented, every deadline visible, nothing forgotten.
             </p>
 
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
@@ -248,7 +248,7 @@ export function ProductDirectionSection() {
               >
                 <span className="flex items-center gap-2 text-zinc-500 text-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-zinc-500" />
-                  January — €2,340
+                  January, €2,340
                 </span>
               </div>
 
@@ -258,7 +258,7 @@ export function ProductDirectionSection() {
               >
                 <span className="flex items-center gap-2 text-zinc-400 text-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-zinc-400" />
-                  February — €3,890
+                  February, €3,890
                 </span>
               </div>
 
@@ -273,7 +273,7 @@ export function ProductDirectionSection() {
                       <path d="M8 3v10M3 8l5 5 5-5" />
                     </svg>
                   </span>
-                  <span className="text-white font-medium text-sm">March — €5,547</span>
+                  <span className="text-white font-medium text-sm">March, €5,547</span>
                 </div>
                 <p className="text-zinc-300 text-sm mb-3">Best month this year! +42% vs February</p>
                 <span className="text-zinc-500 text-xs">3 gigs • 2 sync licenses • streaming</span>

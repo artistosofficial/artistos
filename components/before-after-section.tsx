@@ -5,7 +5,7 @@ import { X, Check } from "lucide-react"
 
 const beforeItems = [
   "Ideas scattered across Notes, Voice Memos, and random folders",
-  "Release day panic — scrambling for artwork and assets",
+  "Release day panic, scrambling for artwork and assets",
   "No idea how much you actually made this year",
   "Posting content randomly with no plan",
   "Forgetting who you met at that festival",
@@ -87,18 +87,18 @@ export function BeforeAfterSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-zinc-900/30 border border-white rounded-2xl p-8"
+            className="bg-zinc-900/30 border border-[#E85002] rounded-2xl p-8"
           >
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center bg-white/10">
-                <Check className="w-4 h-4 text-white" />
+              <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#E85002]/10">
+                <Check className="w-4 h-4 text-[#E85002]" />
               </div>
               <span className="text-white font-medium">With ArtistOS</span>
             </div>
             <ul className="space-y-4">
               {afterItems.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <Check className="w-4 h-4 mt-0.5 shrink-0 text-white" />
+                  <Check className="w-4 h-4 mt-0.5 shrink-0 text-[#E85002]" />
                   <span className="text-zinc-300 text-sm">{item}</span>
                 </li>
               ))}

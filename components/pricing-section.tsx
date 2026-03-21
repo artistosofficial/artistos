@@ -4,8 +4,9 @@ import { motion } from "framer-motion"
 import { Check } from "lucide-react"
 
 const features = [
-  "12 integrated modules — each with a custom GPT assistant",
-  "Lifetime access — pay once, use forever",
+  "Dedicated areas for every part of your career",
+  "14 AI assistants to do the work with you",
+  "Lifetime access. Pay once, use forever",
   "All future updates included",
   "Works with free or paid Notion",
   "Duplicate in seconds, customize as you like",
@@ -40,7 +41,9 @@ export function PricingSection() {
               lineHeight: 1.1,
             }}
           >
-            Simple pricing. Serious results.
+            Simple pricing.
+            <br />
+            Serious results.
           </h2>
           <p className="text-zinc-400">
             One price. Everything included. Forever.
@@ -52,22 +55,19 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-zinc-900/50 border-2 border-white rounded-2xl p-8"
+          className="bg-zinc-900/50 border-2 border-[#E85002] rounded-2xl p-8"
         >
-          {/* Price */}
+          {/* Price TBD */}
           <div className="text-center mb-8">
-            <div className="flex items-baseline justify-center gap-2">
-              <span className="text-5xl font-bold text-white">€49</span>
-              <span className="text-zinc-500">one-time</span>
-            </div>
-            <p className="text-zinc-400 mt-2">No subscriptions. No hidden fees.</p>
+            <p className="text-zinc-300 text-lg font-medium">Everything you need. One workspace.</p>
+            <p className="text-zinc-500 mt-1">No subscriptions. No hidden fees.</p>
           </div>
 
           {/* Features */}
           <ul className="space-y-4 mb-8">
             {features.map((feature) => (
               <li key={feature} className="flex items-start gap-3">
-                <Check className="w-5 h-5 mt-0.5 shrink-0 text-white" />
+                <Check className="w-5 h-5 mt-0.5 shrink-0 text-[#E85002]" />
                 <span className="text-zinc-300 text-sm">{feature}</span>
               </li>
             ))}
@@ -76,9 +76,9 @@ export function PricingSection() {
           {/* CTA */}
           <a
             href="#"
-            className="block w-full py-4 text-center text-zinc-900 font-medium rounded-lg transition-colors text-base bg-white hover:bg-zinc-200"
+            className="block w-full py-4 text-center text-[#E85002] font-medium rounded-lg transition-colors text-base border border-[#E85002]/60 bg-[#E85002]/10 hover:bg-[#E85002]/20"
           >
-            Get ArtistOS Now
+            Get Early Access
           </a>
 
           {/* Guarantee */}

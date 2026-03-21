@@ -7,17 +7,17 @@ const personas = [
   {
     title: "You're getting gigs",
     description:
-      "You're playing shows, building your network, and starting to get real opportunities — but managing it all is becoming a second full-time job.",
+      "You're playing shows, building your network, and starting to get real opportunities, but managing it all is becoming a second full-time job.",
   },
   {
     title: "You're releasing music",
     description:
-      "You have tracks in progress, label relationships to manage, and releases that need real planning — not just a group chat and a prayer.",
+      "You have tracks in progress, label relationships to manage, and releases that need real planning. Not just a group chat and a prayer.",
   },
   {
     title: "You're building a brand",
     description:
-      "You understand that the music alone isn't enough — you need content, positioning, and consistent presence. You just need the system to make it happen.",
+      "You understand that the music alone isn't enough. You need content, positioning, and consistent presence. You just need the system to make it happen.",
   },
 ]
 
@@ -48,7 +48,7 @@ export function WhoItsForSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-5xl text-white mb-4 max-w-2xl"
+          className="text-3xl sm:text-4xl md:text-5xl text-white mb-4"
           style={{
             letterSpacing: "-0.0325em",
             fontVariationSettings: '"opsz" 28',
@@ -56,7 +56,7 @@ export function WhoItsForSection() {
             lineHeight: 1.1,
           }}
         >
-          Built for the artist who's playing for real.
+          Built for DJs and producers who are serious about their careers.
         </motion.h2>
 
         <motion.p
@@ -66,7 +66,7 @@ export function WhoItsForSection() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="text-zinc-400 max-w-lg mb-16"
         >
-          ArtistOS is not for beginners. It's for DJs and producers who are serious about building a career — not just a hobby.
+          ArtistOS is not for beginners. It's for DJs and producers who are serious about building a career, not just a hobby.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

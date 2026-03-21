@@ -229,7 +229,7 @@ function GoalsMockup() {
           <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
             <div
               className="h-full rounded-full"
-              style={{ width: `${item.progress}%`, backgroundColor: '#FFFFFF' }}
+              style={{ width: `${item.progress}%`, backgroundColor: '#E85002' }}
             />
           </div>
         </div>
@@ -398,8 +398,8 @@ export function WorkflowsSection() {
           <div className="lg:max-w-xl">
             {/* Violet indicator */}
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#FFFFFF' }} />
-              <span className="text-sm text-zinc-400">12 integrated modules</span>
+              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#E85002' }} />
+              <span className="text-sm text-zinc-400">Dedicated areas for your career</span>
               <ChevronRight className="w-4 h-4 text-zinc-600" />
             </div>
 
@@ -413,7 +413,7 @@ export function WorkflowsSection() {
 
           {/* Description */}
           <p className="text-zinc-400 lg:max-w-sm lg:pt-12">
-            Every module is designed around the real workflows of DJs and producers. No bloat, no learning curve —
+            Every module is designed around the real workflows of DJs and producers. No bloat, no learning curve.
             just the tools you actually need.
           </p>
         </div>

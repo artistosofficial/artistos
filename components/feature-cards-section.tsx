@@ -9,7 +9,7 @@ const painPoints: { icon: LucideIcon; title: string; description: string }[] = [
   {
     icon: MessageSquare,
     title: "Contacts scattered everywhere",
-    description: "Booking contacts scattered across DMs, emails, and notes apps — you lose opportunities because follow-up falls through the cracks.",
+    description: "Booking contacts scattered across DMs, emails, and notes apps. You lose opportunities because follow-up falls through the cracks.",
   },
   {
     icon: Disc3,
@@ -24,12 +24,12 @@ const painPoints: { icon: LucideIcon; title: string; description: string }[] = [
   {
     icon: Share2,
     title: "Content is reactive, not strategic",
-    description: "You post when you remember, not when it matters. No strategy, no system, no consistency — just random bursts or radio silence.",
+    description: "You post when you remember, not when it matters. No strategy, no system, no consistency. Just random bursts or radio silence.",
   },
   {
     icon: Headphones,
     title: "More managing than making music",
-    description: "You spend more time managing chaos than actually making music — which is why you started this in the first place.",
+    description: "You spend more time managing chaos than actually making music, which is why you started this in the first place.",
   },
 ]
 
@@ -111,7 +111,7 @@ export function FeatureCardsSection() {
                 There's a better way.
               </h3>
               <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                ArtistOS gives you the exact infrastructure that serious independent artists use to run their careers — without hiring a manager or a team. One workspace. Every area of your career. Built-in AI assistants to do the heavy lifting. So you can focus on the music.
+                ArtistOS gives you the exact infrastructure that serious independent artists use to run their careers, without hiring a manager or a team. One workspace. Every area of your career. Built-in AI assistants to do the heavy lifting. So you can focus on the music.
               </p>
               <p className="text-zinc-300 text-sm font-medium">
                 Built by artists who needed this and couldn't find it anywhere.

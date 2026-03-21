@@ -59,7 +59,7 @@ export function HowItWorksSection() {
             >
               {/* Large number */}
               <div
-                className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center text-3xl font-bold text-zinc-900 bg-white"
+                className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center text-3xl font-bold text-[#E85002] border-2 border-[#E85002]/60 bg-[#E85002]/10"
               >
                 {step.number}
               </div>

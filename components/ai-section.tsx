@@ -38,8 +38,8 @@ export function AISection() {
             transition={{ duration: 0.6 }}
             className="flex items-center gap-2 mb-6"
           >
-            <div className="w-2 h-2 rounded-full bg-white" />
-            <span className="text-zinc-400 text-sm">12 integrated modules</span>
+            <div className="w-2 h-2 rounded-full bg-[#E85002]" />
+            <span className="text-zinc-400 text-sm">14 AI assistants</span>
             <ChevronRight className="w-4 h-4 text-zinc-500" />
           </motion.div>
 
@@ -68,7 +68,7 @@ export function AISection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-zinc-400 max-w-md mb-8"
           >
-            <span className="text-white font-medium">One workspace, twelve modules.</span> Each one designed for a specific
+            <span className="text-white font-medium">One workspace, every area covered.</span> Each one designed for a specific
             part of your music business, all connected so nothing falls through the cracks.
           </motion.p>
 
@@ -145,7 +145,7 @@ export function AISection() {
                 {/* Input field */}
                 <div className="bg-zinc-800/50 border border-zinc-700 rounded-t-xl px-5 py-4 flex items-center justify-between">
                   <span className="text-zinc-500 italic">Choose a module...</span>
-                  <span className="text-zinc-600 text-xs">12 modules · 20+ GPTs</span>
+                  <span className="text-zinc-600 text-xs">Dedicated areas · 14 AI assistants</span>
                 </div>
 
                 {/* Dropdown options */}

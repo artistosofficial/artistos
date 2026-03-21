@@ -4,7 +4,7 @@ import { ChevronRight, Mail, Phone, Globe, Search, Disc3, ClipboardList, FileTex
 
 export function BookingsARSection() {
   return (
-    <section className="relative py-40 px-6 md:px-12 lg:px-24">
+    <section className="relative py-40 px-6 md:px-12 lg:px-24" style={{ backgroundColor: "#09090B" }}>
       {/* Gradient overlay at top */}
       <div
         className="absolute inset-x-0 top-0 pointer-events-none"
@@ -17,7 +17,7 @@ export function BookingsARSection() {
       <div className="max-w-6xl mx-auto">
         {/* Section label */}
         <div className="flex items-center gap-2 mb-6">
-          <div className="w-3 h-3 rounded-full bg-white" />
+          <div className="w-3 h-3 rounded-full bg-[#E85002]" />
           <span className="text-zinc-400 text-sm">Bookings & A&R</span>
           <ChevronRight className="w-4 h-4 text-zinc-500" />
         </div>
@@ -47,7 +47,7 @@ export function BookingsARSection() {
           <div className="border-t border-r border-b border-zinc-800 pt-10 pr-10 pb-16">
             <h3 className="text-xl font-medium text-zinc-200 mb-3">Every contact in one place</h3>
             <p className="text-zinc-500 text-base leading-relaxed mb-8">
-              Promoters, labels, collaborators, managers — all organized with context, history, and follow-up reminders.
+              Promoters, labels, collaborators, managers. All organized with context, history, and follow-up reminders.
             </p>
 
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
@@ -82,7 +82,7 @@ export function BookingsARSection() {
           <div className="border-t border-b border-zinc-800 pt-10 pl-10 pb-16">
             <h3 className="text-xl font-medium text-zinc-200 mb-3">AI-powered outreach</h3>
             <p className="text-zinc-500 text-base leading-relaxed mb-8">
-              4 custom GPTs to research venues, write outreach, find labels, and manage submissions.
+              4 AI assistants to research venues, write outreach, find labels, and manage submissions.
             </p>
 
             {/* GPT cards grid */}

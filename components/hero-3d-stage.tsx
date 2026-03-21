@@ -1,12 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { DashboardMockup } from "./dashboard-mockup"
+import { useEffect } from "react"
+import { motion, useAnimate } from "framer-motion"
 import { Navbar } from "./navbar"
 import { LogoCloud } from "./logo-cloud"
 import { FeatureCardsSection } from "./feature-cards-section"
-import { AISection } from "./ai-section"
 import { ProductDirectionSection } from "./product-direction-section"
 import { BookingsARSection } from "./bookings-ar-section"
 import { ContentAISection } from "./content-ai-section"
@@ -20,191 +18,190 @@ import { PricingSection } from "./pricing-section"
 import { FAQSection } from "./faq-section"
 import { CTASection } from "./cta-section"
 import { Footer } from "./footer"
+import { NotionTemplatePreview } from "./notion-template-preview"
 
 export function Hero3DStage() {
-  const [yOffset, setYOffset] = useState(0)
+  const [scope, animate] = useAnimate()
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      const offset = Math.min(scrollY / 300, 1) * -20
-      setYOffset(offset)
+    const sequence = async () => {
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      const isMd = window.matchMedia("(min-width: 768px)").matches
+
+      if (prefersReduced) {
+        animate(".anim-pill", { opacity: 1, y: 0 }, { duration: 0 })
+        animate(".anim-headline", { opacity: 1, y: 0 }, { duration: 0 })
+        animate(".anim-subhead", { opacity: 1, y: 0 }, { duration: 0 })
+        animate(".anim-ctas", { opacity: 1, y: 0 }, { duration: 0 })
+        if (isMd) {
+          animate(".anim-dashboard", { opacity: 1, y: 0, scale: 1 }, { duration: 0 })
+          animate(".anim-glow-group", { opacity: 1, scale: 1 }, { duration: 0 })
+        }
+        return
+      }
+
+      animate(".anim-pill", { opacity: 1, y: 0 }, { duration: 0.45, delay: 0.15, ease: "easeOut" })
+      animate(".anim-headline", { opacity: 1, y: 0 }, { duration: 0.45, delay: 0.25, ease: "easeOut" })
+      animate(".anim-subhead", { opacity: 1, y: 0 }, { duration: 0.45, delay: 0.35, ease: "easeOut" })
+      animate(".anim-ctas", { opacity: 1, y: 0 }, { duration: 0.45, delay: 0.45, ease: "easeOut" })
+
+      if (isMd) {
+        animate(".anim-dashboard", { opacity: 1, y: 0, scale: 1 }, { duration: 0.5, delay: 0.55, ease: [0.22, 1, 0.36, 1] })
+        animate(".anim-glow-group", { opacity: 1, scale: [0.7, 1.03, 1] }, { duration: 0.8, delay: 0.7, ease: "easeOut" })
+      }
     }
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  const baseTransform = {
-    translateX: 2,
-    scale: 1.2,
-    rotateX: 47,
-    rotateY: 31,
-    rotateZ: 324,
-  }
+    sequence()
+  }, [animate])
 
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden" style={{ backgroundColor: "#09090B" }}>
+      <section ref={scope} className="relative md:min-h-screen pt-16 overflow-hidden bg-[#09090B]">
         <Navbar />
 
-        {/* Subtle glow */}
-        <div
-          className="absolute pointer-events-none"
-          style={{
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -30%)",
-            width: "1200px",
-            height: "800px",
-            background: "radial-gradient(ellipse at center, rgba(255, 255, 255, 0.04) 0%, transparent 70%)",
-          }}
-        />
-
-        {/* Main content */}
-        <div className="relative z-10 pt-28 flex flex-col">
-          {/* Hero text - contained and centered */}
-          <div className="w-full flex justify-center px-6 mt-16">
-            <div className="w-full max-w-4xl">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-zinc-700 bg-zinc-800/50 mb-8"
-              >
-                <span className="text-xs font-semibold tracking-widest uppercase text-zinc-300">Built for serious artists</span>
-              </motion.div>
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-[1.1] text-balance"
-              >
-                Stop managing chaos. Start managing a career.
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="mt-6 text-lg text-zinc-400"
-              >
-                The all-in-one Notion workspace for DJs and producers who are serious about their craft.
-                <br />
-                Releases, gigs, finances, content, and creative workflow — organized in one place.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="mt-8 flex flex-col gap-4"
-              >
-                <div className="flex items-center gap-6">
-                  <a
-                    href="#pricing"
-                    className="px-5 py-2.5 text-zinc-900 font-medium rounded-lg transition-colors text-sm bg-white hover:bg-zinc-200"
-                  >
-                    Get ArtistOS — €49
-                  </a>
-                  <a href="#demo" className="text-zinc-300 font-medium hover:text-white transition-colors flex items-center gap-2 text-sm">
-                    Watch the walkthrough
-                    <span aria-hidden="true">→</span>
-                  </a>
-                </div>
-                <div className="flex items-center gap-1 text-sm text-zinc-400">
-                  <span className="text-white">★★★★★</span>
-                  <span>Trusted by 100+ DJs & producers</span>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-
-          {/* 3D Stage - full bleed */}
-          <div
-            className="relative mt-16"
-            style={{
-              width: "100vw",
-              marginLeft: "-50vw",
-              marginRight: "-50vw",
-              position: "relative",
-              left: "50%",
-              right: "50%",
-              height: "700px",
-              marginTop: "-60px",
-            }}
-          >
-            <div
-              className="absolute bottom-0 left-0 right-0 h-72 z-10 pointer-events-none"
-              style={{
-                background: "linear-gradient(to top, #09090B 20%, transparent 100%)",
-              }}
-            />
-
-            {/* Perspective container */}
-            <div
-              style={{
-                transform: `translateY(${yOffset}px)`,
-                transition: "transform 0.1s ease-out",
-                contain: "strict",
-                perspective: "4000px",
-                perspectiveOrigin: "100% 0",
-                width: "100%",
-                height: "100%",
-                transformStyle: "preserve-3d",
-                position: "relative",
-              }}
+        {/* Content Layer */}
+        <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+          {/* Text - centered on mobile, left-aligned on md+ */}
+          <div className="pt-20 pb-6 md:pt-24 md:pb-8 text-center md:text-left">
+            {/* Pill Label */}
+            <motion.div
+              className="anim-pill"
+              initial={{ opacity: 0, y: 12 }}
             >
-              {/* Transformed base */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  delay: 0.5,
-                  duration: 1,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                style={{
-                  backgroundColor: "#09090B",
-                  transformOrigin: "0 0",
-                  backfaceVisibility: "hidden",
-                  WebkitBackfaceVisibility: "hidden",
-                  border: "1px solid #1e1e1e",
-                  borderRadius: "10px",
-                  width: "1600px",
-                  height: "900px",
-                  margin: "280px auto auto",
-                  position: "absolute",
-                  top: 0,
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  transform: `translate(${baseTransform.translateX}%) scale(${baseTransform.scale}) rotateX(${baseTransform.rotateX}deg) rotateY(${baseTransform.rotateY}deg) rotate(${baseTransform.rotateZ}deg)`,
-                  transformStyle: "preserve-3d",
-                  overflow: "hidden",
-                }}
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-widest border border-zinc-700 text-zinc-400">
+                Built for Serious Artists
+              </span>
+            </motion.div>
+
+            {/* Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 12 }}
+              className="anim-headline text-[2.1rem] sm:text-4xl md:text-[2.8rem] lg:text-[3.5rem] font-semibold mt-6 mb-5 leading-[1.15] tracking-tight bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent whitespace-nowrap"
+            >
+              Stop managing chaos.
+              <br />
+              Start managing a career.
+            </motion.h1>
+
+            {/* Subheadline */}
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              className="anim-subhead text-sm md:text-base text-zinc-400 max-w-sm md:max-w-md mx-auto md:mx-0 mb-8 leading-relaxed"
+            >
+              ArtistOS gives serious DJs and producers one place to run every part of their career, with AI built into every workflow.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              className="anim-ctas flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-3"
+            >
+              <a
+                href="#pricing"
+                className="inline-flex items-center gap-2 px-7 py-2.5 rounded-lg border border-[#E85002]/60 bg-[#E85002]/10 text-[#E85002] text-sm font-medium hover:bg-[#E85002]/20 transition-colors"
               >
-                <DashboardMockup />
+                Get Early Access
+              </a>
+              <a
+                href="#demo"
+                className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full border border-zinc-700 text-white text-sm font-medium hover:bg-zinc-800/50 transition-colors"
+              >
+                Watch the walkthrough
+              </a>
+            </motion.div>
+
+            {/* Social proof */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              className="anim-ctas mt-5 flex items-center justify-center md:justify-start gap-1.5 text-sm text-zinc-500"
+            >
+              <span className="text-[#E85002]">★★★★★</span>
+              <span>Trusted by 100+ DJs & producers</span>
+            </motion.div>
+          </div>
+
+          {/* Notion Template Container */}
+          <div className="relative mt-4 pb-8 hidden md:block">
+            <div className="relative w-full max-w-[1300px] mx-auto">
+              {/* Top-edge glow */}
+              <motion.div
+                className="anim-glow-group"
+                initial={{ opacity: 0, scale: 0.7 }}
+                style={{ transformOrigin: "50% 0%", position: "absolute", inset: "-16px", pointerEvents: "none", zIndex: 0 }}
+              >
+                {/* Centered top bloom */}
+                <div
+                  className="absolute inset-0 rounded-2xl"
+                  style={{
+                    background: "radial-gradient(ellipse 60% 20% at 50% 0%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.08) 50%, transparent 70%)",
+                    filter: "blur(12px)",
+                  }}
+                />
+                {/* Wider ambient spread */}
+                <div
+                  className="absolute inset-0 rounded-2xl"
+                  style={{
+                    background: "radial-gradient(ellipse 80% 12% at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 60%)",
+                    filter: "blur(18px)",
+                  }}
+                />
+                {/* Subtle side glows */}
+                <div
+                  className="absolute inset-0 rounded-2xl"
+                  style={{
+                    background: `
+                      radial-gradient(ellipse 15% 40% at 0% 30%, rgba(255,255,255,0.04) 0%, transparent 70%),
+                      radial-gradient(ellipse 15% 40% at 100% 30%, rgba(255,255,255,0.04) 0%, transparent 70%)
+                    `,
+                    filter: "blur(10px)",
+                  }}
+                />
+              </motion.div>
+
+              {/* Dashboard panel */}
+              <motion.div
+                className="anim-dashboard relative w-full"
+                initial={{ opacity: 0, y: 50, scale: 0.98 }}
+              >
+                {/* Gradient border wrapper */}
+                <div
+                  className="relative w-full rounded-xl"
+                  style={{
+                    padding: "1px",
+                    background: `
+                      radial-gradient(ellipse 50% 40% at 50% 0%, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.2) 30%, transparent 55%),
+                      radial-gradient(ellipse 15% 50% at 0% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                      radial-gradient(ellipse 15% 50% at 100% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                      linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.01) 100%)
+                    `,
+                  }}
+                >
+                  <div className="relative w-full bg-[#0a0a0a] rounded-[11px] overflow-hidden">
+                    <NotionTemplatePreview />
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>
-
-          <LogoCloud />
-          <FeatureCardsSection />
-          <AISection />
-          <ProductDirectionSection />
-          <BookingsARSection />
-          <ContentAISection />
-          <WorkflowsSection />
-          <BeforeAfterSection />
-          <WhoItsForSection />
-          <VideoSection />
-          <TestimonialsSection />
-          <HowItWorksSection />
-          <PricingSection />
-          <FAQSection />
-          <CTASection />
-          <Footer />
         </div>
+
       </section>
+
+      <LogoCloud />
+      <FeatureCardsSection />
+      <ProductDirectionSection />
+      <BookingsARSection />
+      <ContentAISection />
+      <WorkflowsSection />
+      <BeforeAfterSection />
+      <WhoItsForSection />
+      <VideoSection />
+      <TestimonialsSection />
+      <HowItWorksSection />
+      <PricingSection />
+      <FAQSection />
+      <CTASection />
+      <Footer />
     </>
   )
 }

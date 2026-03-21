@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "What exactly am I buying?",
-    answer: "You're buying a complete Notion template (workspace) that you duplicate to your own account. It includes 12 integrated modules covering every area of your music career: Release Pipeline, Bookings, Financial Dashboard, Content Calendar, Music Production, Booking & Contacts, Goals & Milestones, A&R & Labels, Brand & Suppliers, Music Library, Travel, and Side Projects. Each module comes with its own custom GPT assistant.",
+    answer: "You're buying a complete Notion workspace that you duplicate to your own account. It includes dedicated areas covering every part of your music career: Release Pipeline, Bookings, Financial Dashboard, Content Calendar, Music Production, Booking & Contacts, Goals & Milestones, A&R & Labels, Brand & Suppliers, Music Library, Travel, and Side Projects. Each area comes with its own AI assistant.",
   },
   {
     question: "Can I customize it?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "Is this a subscription?",
-    answer: "No. It's a one-time purchase. Pay €49 once, own it forever. All future updates are included at no extra cost.",
+    answer: "No. It's a one-time purchase. Pay €97 once, own it forever. All future updates are included at no extra cost.",
   },
   {
     question: "What if it's not for me?",
@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: "How do I get updates?",
-    answer: "When we release updates, you'll get an email with a link to duplicate the new version. Your existing data stays in your workspace — you just add the new features.",
+    answer: "When we release updates, you'll get an email with a link to duplicate the new version. Your existing data stays in your workspace. You just add the new features.",
   },
   {
     question: "I'm not very technical. Is this hard to set up?",

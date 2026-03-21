@@ -6,7 +6,7 @@ export function Navbar() {
       <div className="w-full flex justify-center px-6 py-4">
         <div className="w-full max-w-4xl flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-white font-bold text-lg">Base Studios</span>
+            <span className="text-white font-bold text-lg">ArtistOS</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm text-zinc-400 hover:text-white transition-colors">
@@ -22,7 +22,7 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <a
               href="#pricing"
-              className="text-sm text-zinc-900 px-3.5 py-1.5 rounded-md transition-colors bg-white hover:bg-zinc-200"
+              className="text-sm text-[#E85002] px-3.5 py-1.5 rounded-md transition-colors border border-[#E85002]/60 bg-[#E85002]/10 hover:bg-[#E85002]/20"
             >
               Get ArtistOS
             </a>

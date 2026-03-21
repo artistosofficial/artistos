@@ -33,7 +33,7 @@ export function ContentAISection() {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-2 mb-6"
         >
-          <div className="w-3 h-3 rounded-full bg-white" />
+          <div className="w-3 h-3 rounded-full bg-[#E85002]" />
           <span className="text-zinc-400 text-sm">Content creation</span>
           <ChevronRight className="w-4 h-4 text-zinc-500" />
         </motion.div>
@@ -63,7 +63,7 @@ export function ContentAISection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-zinc-400 max-w-md mb-16"
         >
-          From content ideas to captions to scripts — ArtistOS has a specialized GPT for every step of your content workflow.
+          From content ideas to captions to scripts. ArtistOS has a specialized AI assistant for every step of your content workflow.
         </motion.p>
 
         {/* GPT cards grid */}
