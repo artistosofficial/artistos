@@ -1,6 +1,9 @@
 "use client"
 
+import { useEmailCapture } from "@/lib/email-capture-context"
+
 export function Navbar() {
+  const { openModal } = useEmailCapture()
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-[#09090B]/80 backdrop-blur-md">
       <div className="w-full flex justify-center px-6 py-4">
@@ -20,12 +23,12 @@ export function Navbar() {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <a
-              href="#pricing"
+            <button
+              onClick={() => openModal("navbar")}
               className="text-sm text-[#E85002] px-3.5 py-1.5 rounded-md transition-colors border border-[#E85002]/60 bg-[#E85002]/10 hover:bg-[#E85002]/20"
             >
               Get ArtistOS
-            </a>
+            </button>
           </div>
         </div>
       </div>
