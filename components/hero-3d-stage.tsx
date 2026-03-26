@@ -2,6 +2,9 @@
 
 import { useEffect } from "react"
 import { motion, useAnimate } from "framer-motion"
+import { EmailCaptureProvider } from "@/lib/email-capture-context"
+import { EmailCaptureModal } from "./email-capture-modal"
+import { HeroCTA } from "./hero-cta"
 import { Navbar } from "./navbar"
 import { LogoCloud } from "./logo-cloud"
 import { FeatureCardsSection } from "./feature-cards-section"
@@ -55,7 +58,8 @@ export function Hero3DStage() {
   }, [animate])
 
   return (
-    <>
+    <EmailCaptureProvider>
+      <EmailCaptureModal />
       <section ref={scope} className="relative md:min-h-screen pt-16 overflow-hidden bg-[#09090B]">
         <Navbar />
 
@@ -76,7 +80,7 @@ export function Hero3DStage() {
             {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 12 }}
-              className="anim-headline text-[2.1rem] sm:text-4xl md:text-[2.8rem] lg:text-[3.5rem] font-semibold mt-6 mb-5 leading-[1.15] tracking-tight bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent whitespace-nowrap"
+              className="anim-headline text-[1.75rem] sm:text-4xl md:text-[2.8rem] lg:text-[3.5rem] font-semibold mt-6 mb-5 leading-[1.15] tracking-tight bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent md:whitespace-nowrap"
             >
               Stop managing chaos.
               <br />
@@ -96,12 +100,7 @@ export function Hero3DStage() {
               initial={{ opacity: 0, y: 12 }}
               className="anim-ctas flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-3"
             >
-              <a
-                href="#pricing"
-                className="inline-flex items-center gap-2 px-7 py-2.5 rounded-lg border border-[#E85002]/60 bg-[#E85002]/10 text-[#E85002] text-sm font-medium hover:bg-[#E85002]/20 transition-colors"
-              >
-                Get Early Access
-              </a>
+              <HeroCTA />
               <a
                 href="#demo"
                 className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full border border-zinc-700 text-white text-sm font-medium hover:bg-zinc-800/50 transition-colors"
@@ -116,16 +115,16 @@ export function Hero3DStage() {
               className="anim-ctas mt-5 flex items-center justify-center md:justify-start gap-1.5 text-sm text-zinc-500"
             >
               <span className="text-[#E85002]">★★★★★</span>
-              <span>Trusted by 100+ DJs & producers</span>
+              <span>Trusted by established DJs & producers</span>
             </motion.div>
           </div>
 
-          {/* Notion Template Container */}
+          {/* Notion Template Container (desktop only) */}
           <div className="relative mt-4 pb-8 hidden md:block">
             <div className="relative w-full max-w-[1300px] mx-auto">
-              {/* Top-edge glow */}
+              {/* Top-edge glow (desktop only) */}
               <motion.div
-                className="anim-glow-group"
+                className="anim-glow-group hidden md:block"
                 initial={{ opacity: 0, scale: 0.7 }}
                 style={{ transformOrigin: "50% 0%", position: "absolute", inset: "-16px", pointerEvents: "none", zIndex: 0 }}
               >
@@ -158,14 +157,14 @@ export function Hero3DStage() {
                 />
               </motion.div>
 
-              {/* Dashboard panel */}
+              {/* Dashboard panel - simple border on mobile, gradient on desktop */}
               <motion.div
                 className="anim-dashboard relative w-full"
-                initial={{ opacity: 0, y: 50, scale: 0.98 }}
+                initial={{ opacity: 0, y: 30, scale: 0.98 }}
               >
-                {/* Gradient border wrapper */}
+                {/* Desktop: gradient border */}
                 <div
-                  className="relative w-full rounded-xl"
+                  className="hidden md:block relative w-full rounded-xl"
                   style={{
                     padding: "1px",
                     background: `
@@ -196,12 +195,12 @@ export function Hero3DStage() {
       <BeforeAfterSection />
       <WhoItsForSection />
       <VideoSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <HowItWorksSection />
       <PricingSection />
       <FAQSection />
       <CTASection />
       <Footer />
-    </>
+    </EmailCaptureProvider>
   )
 }
