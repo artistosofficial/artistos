@@ -1,9 +1,17 @@
 import { NextResponse } from "next/server"
-import { Resend } from "resend"
+import nodemailer from "nodemailer"
 import { supabaseAdmin } from "@/lib/supabase"
 import { subscribeSchema } from "@/lib/schemas/subscribe"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+})
 
 export async function POST(request: Request) {
   let body: unknown
@@ -46,8 +54,8 @@ export async function POST(request: Request) {
   }
 
   try {
-    await resend.emails.send({
-      from: "ArtistOS <hello@artistos.pro>",
+    await transporter.sendMail({
+      from: `ArtistOS <${process.env.SMTP_USER}>`,
       to: email,
       subject: `${firstName}, you're on the ArtistOS waitlist`,
       text: [
@@ -67,7 +75,7 @@ export async function POST(request: Request) {
       ].join("\n"),
     })
   } catch (emailError) {
-    console.error("Resend email error:", emailError)
+    console.error("SMTP email error:", emailError)
   }
 
   return NextResponse.json(
