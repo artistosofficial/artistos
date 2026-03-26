@@ -5,7 +5,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Left - Copyright */}
           <div className="text-zinc-500 text-sm">
-            © 2025 Base Studios. All rights reserved.
+            © 2026 ArtistOS. All rights reserved.
           </div>
 
           {/* Right - Links */}
@@ -19,7 +19,7 @@ export function Footer() {
             <a href="#faq" className="text-zinc-500 hover:text-zinc-300 transition-colors text-sm">
               FAQ
             </a>
-            <a href="mailto:hello@basestudios.io" className="text-zinc-500 hover:text-zinc-300 transition-colors text-sm">
+            <a href="mailto:hello@artistos.pro" className="text-zinc-500 hover:text-zinc-300 transition-colors text-sm">
               Contact
             </a>
           </div>
