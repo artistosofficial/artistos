@@ -47,7 +47,7 @@ export async function POST(request: Request) {
 
   try {
     await resend.emails.send({
-      from: "ArtistOS <hello@artistos.pro>",
+      from: "ArtistOS <hello@send.artistos.pro>",
       to: email,
       subject: `${firstName}, you're on the ArtistOS waitlist`,
       text: [
