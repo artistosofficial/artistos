@@ -20,7 +20,7 @@ export function EmailCaptureModal() {
     formState: { errors, isSubmitting },
   } = useForm<SubscribeInput>({
     resolver: zodResolver(subscribeSchema),
-    defaultValues: { email: "", source: "hero" },
+    defaultValues: { firstName: "", lastName: "", email: "", source: "hero" },
   })
 
   async function onSubmit(data: SubscribeInput) {
@@ -62,10 +62,16 @@ export function EmailCaptureModal() {
       <DialogContent className="bg-zinc-950 border border-zinc-800 sm:max-w-md">
         <DialogTitle className="sr-only">Get Early Access</DialogTitle>
         {submitted ? (
-          <div className="text-center py-6">
-            <div className="text-3xl mb-3">&#10003;</div>
-            <h3 className="text-xl font-semibold text-white mb-2">You're in!</h3>
-            <p className="text-zinc-400 text-sm">{submittedMessage}</p>
+          <div className="text-center py-8">
+            <div className="w-12 h-12 rounded-full border-2 border-[#E85002] flex items-center justify-center mx-auto mb-4">
+              <svg className="w-6 h-6 text-[#E85002]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-2">{submittedMessage}</h3>
+            <p className="text-zinc-400 text-sm max-w-xs mx-auto">
+              Check your inbox for a confirmation. We'll reach out when ArtistOS is ready to launch.
+            </p>
           </div>
         ) : (
           <div className="py-4">
@@ -75,14 +81,38 @@ export function EmailCaptureModal() {
             <p className="text-zinc-400 text-sm text-center mb-6">
               Be the first to know when we launch.
             </p>
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <input
+                    {...register("firstName")}
+                    type="text"
+                    placeholder="First name"
+                    className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#E85002]/60 transition-colors"
+                    autoFocus
+                  />
+                  {errors.firstName && (
+                    <p className="text-red-400 text-xs mt-1.5">{errors.firstName.message}</p>
+                  )}
+                </div>
+                <div>
+                  <input
+                    {...register("lastName")}
+                    type="text"
+                    placeholder="Last name"
+                    className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#E85002]/60 transition-colors"
+                  />
+                  {errors.lastName && (
+                    <p className="text-red-400 text-xs mt-1.5">{errors.lastName.message}</p>
+                  )}
+                </div>
+              </div>
               <div>
                 <input
                   {...register("email")}
                   type="email"
                   placeholder="your@email.com"
                   className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#E85002]/60 transition-colors"
-                  autoFocus
                 />
                 {errors.email && (
                   <p className="text-red-400 text-xs mt-1.5">{errors.email.message}</p>
