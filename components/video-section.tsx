@@ -1,9 +1,27 @@
 "use client"
 
+import { useState, useRef } from "react"
 import { motion } from "framer-motion"
-import { Play } from "lucide-react"
+import { Play, Pause } from "lucide-react"
+
+const VIDEO_URL = "https://nzvtlstmfgufcshunlhw.supabase.co/storage/v1/object/public/videos/artistos-walkthrough-web.mp4"
 
 export function VideoSection() {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  function handlePlayPause() {
+    if (!videoRef.current) return
+
+    if (isPlaying) {
+      videoRef.current.pause()
+      setIsPlaying(false)
+    } else {
+      videoRef.current.play()
+      setIsPlaying(true)
+    }
+  }
+
   return (
     <section id="demo" className="relative py-24 px-6" style={{ backgroundColor: "#09090B" }}>
       <div className="max-w-4xl mx-auto">
@@ -37,27 +55,38 @@ export function VideoSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative aspect-video rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900/50"
         >
-          {/* Placeholder with gradient background */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 50%, transparent 100%)",
-            }}
+          <video
+            ref={videoRef}
+            src={VIDEO_URL}
+            className="w-full h-full object-cover"
+            playsInline
+            preload="metadata"
+            onEnded={() => setIsPlaying(false)}
+            onClick={handlePlayPause}
           />
 
-          {/* Play button */}
-          <button className="absolute inset-0 flex items-center justify-center group">
-            <div
-              className="w-20 h-20 rounded-full flex items-center justify-center transition-all group-hover:scale-110 bg-white"
-            >
-              <Play className="w-8 h-8 text-zinc-900 ml-1" fill="currentColor" />
+          {/* Play/Pause overlay */}
+          <button
+            onClick={handlePlayPause}
+            className={`absolute inset-0 flex items-center justify-center group transition-opacity duration-300 ${
+              isPlaying ? "opacity-0 hover:opacity-100" : "opacity-100"
+            }`}
+          >
+            <div className="w-20 h-20 rounded-full flex items-center justify-center transition-all group-hover:scale-110 bg-white">
+              {isPlaying ? (
+                <Pause className="w-8 h-8 text-zinc-900" fill="currentColor" />
+              ) : (
+                <Play className="w-8 h-8 text-zinc-900 ml-1" fill="currentColor" />
+              )}
             </div>
           </button>
 
-          {/* Video thumbnail placeholder text */}
-          <div className="absolute bottom-6 left-6">
-            <p className="text-zinc-500 text-sm">3 min walkthrough</p>
-          </div>
+          {/* Duration label */}
+          {!isPlaying && (
+            <div className="absolute bottom-6 left-6">
+              <p className="text-zinc-500 text-sm">3 min walkthrough</p>
+            </div>
+          )}
         </motion.div>
       </div>
     </section>
