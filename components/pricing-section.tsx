@@ -1,5 +1,6 @@
 "use client"
 
+import { useEmailCapture } from "@/lib/email-capture-context"
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
 
@@ -14,6 +15,8 @@ const features = [
 ]
 
 export function PricingSection() {
+  const { openModal } = useEmailCapture()
+
   return (
     <section id="pricing" className="relative py-24 px-6" style={{ backgroundColor: "#09090B" }}>
       <div
@@ -74,12 +77,12 @@ export function PricingSection() {
           </ul>
 
           {/* CTA */}
-          <a
-            href="#"
+          <button
+            onClick={() => openModal("pricing")}
             className="block w-full py-4 text-center text-[#E85002] font-medium rounded-lg transition-colors text-base border border-[#E85002]/60 bg-[#E85002]/10 hover:bg-[#E85002]/20"
           >
             Get Early Access
-          </a>
+          </button>
 
           {/* Guarantee */}
           <p className="text-center text-zinc-500 text-sm mt-4">
