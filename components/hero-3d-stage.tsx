@@ -98,14 +98,14 @@ export function Hero3DStage() {
             {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
-              className="anim-ctas flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-3"
+              className="anim-ctas flex flex-row items-center md:items-start justify-center md:justify-start gap-3"
             >
               <HeroCTA />
               <a
                 href="#demo"
-                className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full border border-zinc-700 text-white text-sm font-medium hover:bg-zinc-800/50 transition-colors"
+                className="inline-flex items-center gap-2 px-5 sm:px-7 py-3 rounded-lg border border-zinc-700 text-white text-sm font-medium hover:bg-zinc-800/50 transition-colors"
               >
-                Watch the walkthrough
+                Watch walkthrough
               </a>
             </motion.div>
 

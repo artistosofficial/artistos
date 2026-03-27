@@ -4,7 +4,7 @@ import { ChevronRight, Mail, Phone, Globe, Search, Disc3, ClipboardList, FileTex
 
 export function BookingsARSection() {
   return (
-    <section className="relative py-40 px-6 md:px-12 lg:px-24" style={{ backgroundColor: "#09090B" }}>
+    <section className="relative py-16 md:py-40 px-6 md:px-12 lg:px-24" style={{ backgroundColor: "#09090B" }}>
       {/* Gradient overlay at top */}
       <div
         className="absolute inset-x-0 top-0 pointer-events-none"

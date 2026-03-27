@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export function LogoCloud() {
   return (
-    <div className="relative z-20 pb-24 pt-8" style={{ backgroundColor: "#09090B" }}>
+    <div className="relative z-20 pb-24 pt-8 hidden md:block" style={{ backgroundColor: "#09090B" }}>
       <div className="w-full flex justify-center px-6">
         <div className="w-full max-w-4xl text-center">
           <motion.p
@@ -14,7 +14,7 @@ export function LogoCloud() {
             transition={{ duration: 0.6 }}
             className="text-lg text-zinc-300 mb-2"
           >
-            Trusted by 100+ DJs & producers
+            Trusted by established DJs & producers
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ export function LogoCloud() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg text-zinc-500 mb-16"
           >
-            From bedroom producers to touring artists.
+            From independent producers to touring artists.
           </motion.p>
 
           <motion.div
@@ -46,7 +46,7 @@ export function LogoCloud() {
             </div>
 
             {/* Platform icons */}
-            <div className="flex items-center gap-12 opacity-60">
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 opacity-60">
               {/* Beatport-style icon */}
               <div className="flex items-center gap-2 text-zinc-400">
                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">

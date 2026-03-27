@@ -15,7 +15,9 @@ export function CTASection() {
             Focus on the art.
           </h2>
           <p className="text-zinc-400 max-w-lg">
-            Join DJs and producers who stopped winging it and started building a real career.
+            Built for artists who treat their career
+            <br />
+            like a business.
           </p>
           <div className="flex flex-col items-center gap-4">
             <button

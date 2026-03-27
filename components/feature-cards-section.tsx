@@ -35,7 +35,7 @@ const painPoints: { icon: LucideIcon; title: string; description: string }[] = [
 
 export function FeatureCardsSection() {
   return (
-    <div id="features" className="relative z-20 py-40" style={{ backgroundColor: "#09090B" }}>
+    <div id="features" className="relative z-20 py-16 md:py-40" style={{ backgroundColor: "#09090B" }}>
       <div
         className="absolute top-0 left-0 right-0 pointer-events-none"
         style={{

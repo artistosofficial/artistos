@@ -4,7 +4,7 @@ import { ChevronRight, Check } from "lucide-react"
 
 export function ProductDirectionSection() {
   return (
-    <section className="relative py-40 px-6 md:px-12 lg:px-24" style={{ backgroundColor: "#09090B" }}>
+    <section className="relative py-16 md:py-40 px-6 md:px-12 lg:px-24" style={{ backgroundColor: "#09090B" }}>
       {/* Gradient overlay at top */}
       <div
         className="absolute inset-x-0 top-0 pointer-events-none"
@@ -43,7 +43,7 @@ export function ProductDirectionSection() {
 
         {/* 3D Timeline Visualization */}
         <div
-          className="relative w-full mb-16"
+          className="relative w-full mb-16 hidden md:block"
           style={{
             perspective: "1200px",
           }}

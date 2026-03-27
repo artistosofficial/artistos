@@ -20,7 +20,7 @@ const modules = [
 
 export function AISection() {
   return (
-    <div className="relative z-20 py-40" style={{ backgroundColor: "#09090B" }}>
+    <div className="relative z-20 py-16 md:py-40" style={{ backgroundColor: "#09090B" }}>
       <div
         className="absolute top-0 left-0 right-0 pointer-events-none"
         style={{

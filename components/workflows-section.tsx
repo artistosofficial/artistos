@@ -373,12 +373,20 @@ function CardMockup({ type }: { type: number }) {
 export function WorkflowsSection() {
   const [scrollPosition, setScrollPosition] = useState(0)
 
+  const getVisibleCount = () => {
+    if (typeof window === "undefined") return 4
+    if (window.innerWidth < 640) return 1
+    if (window.innerWidth < 1024) return 2
+    return 4
+  }
+
   const scrollLeft = () => {
     setScrollPosition(Math.max(0, scrollPosition - 1))
   }
 
   const scrollRight = () => {
-    setScrollPosition(Math.min(moduleCards.length - 4, scrollPosition + 1))
+    const visible = getVisibleCount()
+    setScrollPosition(Math.min(moduleCards.length - visible, scrollPosition + 1))
   }
 
   return (
@@ -419,7 +427,7 @@ export function WorkflowsSection() {
         </div>
 
         {/* Carousel */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-x-auto scrollbar-hide lg:overflow-hidden">
           <div
             className="flex gap-4 transition-transform duration-300 ease-out"
             style={{ transform: `translateX(-${scrollPosition * (100 / 4)}%)` }}
@@ -427,7 +435,7 @@ export function WorkflowsSection() {
             {moduleCards.map((card) => {
               const Icon = card.icon
               return (
-                <div key={card.id} className="flex-shrink-0 w-[calc(25%-12px)] min-w-[280px]">
+                <div key={card.id} className="flex-shrink-0 w-[calc(100%-8px)] sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)]">
                   <div className="bg-zinc-900/50 border border-zinc-800/50 rounded-xl overflow-hidden h-[340px] flex flex-col">
                     {/* Mockup area */}
                     <div className="flex-1 relative overflow-hidden">
