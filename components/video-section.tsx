@@ -60,9 +60,11 @@ export function VideoSection() {
             src={VIDEO_URL}
             className="w-full h-full object-cover"
             playsInline
+            controls={isPlaying}
             preload="metadata"
             onEnded={() => setIsPlaying(false)}
-            onClick={handlePlayPause}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
           />
 
           {/* Play/Pause overlay */}
