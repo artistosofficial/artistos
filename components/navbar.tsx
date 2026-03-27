@@ -10,7 +10,7 @@ export function Navbar() {
       <div className="w-full flex justify-center px-6 py-4">
         <div className="w-full max-w-4xl flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Image src="/logo.svg" alt="ArtistOS" width={28} height={28} />
+            <Image src="/logo.svg" alt="ArtistOS" width={36} height={36} />
             <span className="text-white font-bold text-lg">ArtistOS</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
