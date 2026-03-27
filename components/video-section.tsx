@@ -2,24 +2,18 @@
 
 import { useState, useRef } from "react"
 import { motion } from "framer-motion"
-import { Play, Pause } from "lucide-react"
+import { Play } from "lucide-react"
 
 const VIDEO_URL = "https://nzvtlstmfgufcshunlhw.supabase.co/storage/v1/object/public/videos/artistos-walkthrough-web.mp4"
 
 export function VideoSection() {
-  const [isPlaying, setIsPlaying] = useState(false)
+  const [hasStarted, setHasStarted] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  function handlePlayPause() {
+  function handlePlay() {
     if (!videoRef.current) return
-
-    if (isPlaying) {
-      videoRef.current.pause()
-      setIsPlaying(false)
-    } else {
-      videoRef.current.play()
-      setIsPlaying(true)
-    }
+    videoRef.current.play()
+    setHasStarted(true)
   }
 
   return (
@@ -60,32 +54,25 @@ export function VideoSection() {
             src={VIDEO_URL}
             className="w-full h-full object-cover"
             playsInline
-            controls={isPlaying}
+            controls={hasStarted}
             preload="metadata"
-            onEnded={() => setIsPlaying(false)}
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
           />
 
-          {/* Play/Pause overlay */}
-          <button
-            onClick={handlePlayPause}
-            className={`absolute inset-0 flex items-center justify-center group transition-opacity duration-300 ${
-              isPlaying ? "opacity-0 hover:opacity-100" : "opacity-100"
-            }`}
-          >
-            <div className="w-20 h-20 rounded-full flex items-center justify-center transition-all group-hover:scale-110 bg-white">
-              {isPlaying ? (
-                <Pause className="w-8 h-8 text-zinc-900" fill="currentColor" />
-              ) : (
+          {/* Play overlay - only shown before first play */}
+          {!hasStarted && (
+            <button
+              onClick={handlePlay}
+              className="absolute inset-0 flex items-center justify-center group"
+            >
+              <div className="w-20 h-20 rounded-full flex items-center justify-center transition-all group-hover:scale-110 bg-white">
                 <Play className="w-8 h-8 text-zinc-900 ml-1" fill="currentColor" />
-              )}
-            </div>
-          </button>
+              </div>
+            </button>
+          )}
 
           {/* Duration label */}
-          {!isPlaying && (
-            <div className="absolute bottom-6 left-6">
+          {!hasStarted && (
+            <div className="absolute bottom-6 left-6 pointer-events-none">
               <p className="text-zinc-500 text-sm">3 min walkthrough</p>
             </div>
           )}
