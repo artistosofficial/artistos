@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export function LogoCloud() {
   return (
-    <div className="relative z-20 pb-24 pt-8 hidden md:block" style={{ backgroundColor: "#09090B" }}>
+    <div className="relative z-20 pb-24 pt-0 hidden md:block" style={{ backgroundColor: "#09090B" }}>
       <div className="w-full flex justify-center px-6">
         <div className="w-full max-w-4xl text-center">
           <motion.p
