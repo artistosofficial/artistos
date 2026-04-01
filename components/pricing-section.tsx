@@ -1,6 +1,5 @@
 "use client"
 
-import { useEmailCapture } from "@/lib/email-capture-context"
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
 
@@ -15,8 +14,6 @@ const features = [
 ]
 
 export function PricingSection() {
-  const { openModal } = useEmailCapture()
-
   return (
     <section id="pricing" className="relative py-24 px-6" style={{ backgroundColor: "#09090B" }}>
       <div
@@ -60,8 +57,13 @@ export function PricingSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="bg-zinc-900/50 border-2 border-[#E85002] rounded-2xl p-8"
         >
-          {/* Price TBD */}
+          {/* Pricing */}
           <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <span className="text-zinc-500 line-through text-2xl">&euro;149</span>
+              <span className="text-white text-5xl font-semibold" style={{ letterSpacing: "-0.03em" }}>&euro;59</span>
+            </div>
+            <p className="text-[#E85002] text-sm font-medium mb-3">Launch offer — 60% off</p>
             <p className="text-zinc-300 text-lg font-medium">Everything you need. One workspace.</p>
             <p className="text-zinc-500 mt-1">No subscriptions. No hidden fees.</p>
           </div>
@@ -77,12 +79,14 @@ export function PricingSection() {
           </ul>
 
           {/* CTA */}
-          <button
-            onClick={() => openModal("pricing")}
+          <a
+            href={process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
             className="block w-full py-4 text-center text-[#E85002] font-medium rounded-lg transition-colors text-base border border-[#E85002]/60 bg-[#E85002]/10 hover:bg-[#E85002]/20"
           >
-            Get Early Access
-          </button>
+            Buy Now
+          </a>
 
           {/* Guarantee */}
           <p className="text-center text-zinc-500 text-sm mt-4">
