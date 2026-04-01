@@ -50,8 +50,7 @@ export async function POST(request: Request) {
             "",
             "Thank you for purchasing ArtistOS. You made a great decision.",
             "",
-            "Here's your link to get started:",
-            PRODUCT_LINK,
+            `Here's your link to get started: ${PRODUCT_LINK}`,
             "",
             "How to set up:",
             "1. Click the link above",
@@ -68,7 +67,7 @@ export async function POST(request: Request) {
             <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; color: #333; padding: 20px 0;">
               <p style="font-size: 15px; line-height: 1.7; margin: 0 0 14px;">Hey ${name},</p>
               <p style="font-size: 15px; line-height: 1.7; margin: 0 0 14px;">Thank you for purchasing ArtistOS. You made a great decision.</p>
-              <p style="font-size: 15px; line-height: 1.7; margin: 0 0 14px;">Here's your link to get started:<br><a href="${PRODUCT_LINK}" style="color: #E85002;">${PRODUCT_LINK}</a></p>
+              <p style="font-size: 15px; line-height: 1.7; margin: 0 0 14px;"><a href="${PRODUCT_LINK}" style="color: #E85002; text-decoration: none;">Here's your link to get started</a></p>
               <p style="font-size: 15px; line-height: 1.7; margin: 0 0 6px;"><strong>How to set up:</strong></p>
               <ol style="font-size: 15px; line-height: 1.8; color: #555; margin: 0 0 14px; padding-left: 20px;">
                 <li>Click the link above</li>
