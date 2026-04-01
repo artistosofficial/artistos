@@ -1,16 +1,10 @@
-"use client"
-
-import { useEmailCapture } from "@/lib/email-capture-context"
-
 export function HeroCTA() {
-  const { openModal } = useEmailCapture()
-
   return (
-    <button
-      onClick={() => openModal("hero")}
+    <a
+      href="#pricing"
       className="inline-flex items-center gap-2 px-7 py-3 rounded-lg border border-[#E85002]/60 bg-[#E85002]/10 text-[#E85002] text-sm font-medium hover:bg-[#E85002]/20 transition-colors"
     >
-      Get Early Access
-    </button>
+      Get 60% Off Today
+    </a>
   )
 }

@@ -13,16 +13,25 @@ export default function SuccessPage() {
       className="min-h-screen flex items-center justify-center px-6"
       style={{ backgroundColor: "#09090B" }}
     >
+      {/* Backdrop blur overlay */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="max-w-md w-full text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm"
+      />
+
+      {/* Modal card */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="relative z-10 max-w-md w-full bg-zinc-900/80 border border-zinc-800 rounded-2xl p-10 text-center shadow-2xl backdrop-blur-xl"
       >
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+          transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
           className="w-16 h-16 rounded-full bg-[#E85002]/20 border-2 border-[#E85002] flex items-center justify-center mx-auto mb-6"
         >
           <Check className="w-8 h-8 text-[#E85002]" />
@@ -52,9 +61,9 @@ export default function SuccessPage() {
           href={PRODUCT_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full py-4 text-center text-white font-medium rounded-lg transition-colors text-base bg-[#E85002] hover:bg-[#E85002]/90 mb-4"
+          className="block w-full py-4 text-center text-[#E85002] font-medium rounded-lg transition-colors text-base border border-[#E85002]/60 bg-[#E85002]/10 hover:bg-[#E85002]/20 mb-4"
         >
-          Open ArtistOS in Notion
+          Get Started
         </a>
 
         <Link

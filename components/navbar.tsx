@@ -3,10 +3,8 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
-import { useEmailCapture } from "@/lib/email-capture-context"
 
 export function Navbar() {
-  const { openModal } = useEmailCapture()
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
@@ -29,12 +27,12 @@ export function Navbar() {
             </a>
           </div>
           <div className="flex items-center gap-3">
-            <button
-              onClick={() => openModal("navbar")}
+            <a
+              href="#pricing"
               className="hidden sm:block text-sm text-[#E85002] px-4 py-2 rounded-md transition-colors border border-[#E85002]/60 bg-[#E85002]/10 hover:bg-[#E85002]/20"
             >
               Get ArtistOS
-            </button>
+            </a>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors"
@@ -71,15 +69,13 @@ export function Navbar() {
             >
               FAQ
             </a>
-            <button
-              onClick={() => {
-                setMenuOpen(false)
-                openModal("navbar")
-              }}
-              className="w-full text-sm text-[#E85002] px-4 py-3 rounded-md transition-colors border border-[#E85002]/60 bg-[#E85002]/10 hover:bg-[#E85002]/20"
+            <a
+              href="#pricing"
+              onClick={() => setMenuOpen(false)}
+              className="w-full text-sm text-[#E85002] px-4 py-3 rounded-md transition-colors border border-[#E85002]/60 bg-[#E85002]/10 hover:bg-[#E85002]/20 text-center"
             >
               Get ArtistOS
-            </button>
+            </a>
           </div>
         </div>
       )}

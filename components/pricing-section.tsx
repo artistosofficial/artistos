@@ -63,7 +63,7 @@ export function PricingSection() {
               <span className="text-zinc-500 line-through text-2xl">&euro;149</span>
               <span className="text-white text-5xl font-semibold" style={{ letterSpacing: "-0.03em" }}>&euro;59</span>
             </div>
-            <p className="text-[#E85002] text-sm font-medium mb-3">Launch offer — 60% off</p>
+            <p className="text-[#E85002] text-sm font-medium mb-3">You'll never see this price again</p>
             <p className="text-zinc-300 text-lg font-medium">Everything you need. One workspace.</p>
             <p className="text-zinc-500 mt-1">No subscriptions. No hidden fees.</p>
           </div>
