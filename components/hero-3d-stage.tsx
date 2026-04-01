@@ -6,6 +6,7 @@ import { EmailCaptureProvider } from "@/lib/email-capture-context"
 import { EmailCaptureModal } from "./email-capture-modal"
 import { HeroCTA } from "./hero-cta"
 import { Navbar } from "./navbar"
+import { LogoCloud } from "./logo-cloud"
 import { FeatureCardsSection } from "./feature-cards-section"
 import { ProductDirectionSection } from "./product-direction-section"
 import { BookingsARSection } from "./bookings-ar-section"
@@ -185,7 +186,7 @@ export function Hero3DStage() {
 
       </section>
 
-      {/* <LogoCloud /> */}
+      <LogoCloud />
       <FeatureCardsSection />
       <ProductDirectionSection />
       <BookingsARSection />
