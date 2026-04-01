@@ -65,21 +65,18 @@ export async function POST(request: Request) {
             "artistos.pro",
           ].join("\n"),
           html: `
-            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; color: #e4e4e7; background-color: #09090b; padding: 40px 24px;">
-              <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px;">Hey ${name},</p>
-              <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px;">Thank you for purchasing ArtistOS. You made a great decision.</p>
-              <p style="font-size: 16px; line-height: 1.6; margin: 0 0 24px;">Here's your link to get started:</p>
-              <a href="${PRODUCT_LINK}" style="display: block; text-align: center; background-color: #E85002; color: #ffffff; font-weight: 600; font-size: 16px; padding: 14px 24px; border-radius: 8px; text-decoration: none; margin: 0 0 24px;">Open ArtistOS in Notion</a>
-              <p style="font-size: 14px; line-height: 1.6; color: #a1a1aa; margin: 0 0 8px;"><strong style="color: #e4e4e7;">How to set up:</strong></p>
-              <ol style="font-size: 14px; line-height: 1.8; color: #a1a1aa; margin: 0 0 24px; padding-left: 20px;">
-                <li>Click the button above</li>
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; color: #333; padding: 20px 0;">
+              <p style="font-size: 15px; line-height: 1.7; margin: 0 0 14px;">Hey ${name},</p>
+              <p style="font-size: 15px; line-height: 1.7; margin: 0 0 14px;">Thank you for purchasing ArtistOS. You made a great decision.</p>
+              <p style="font-size: 15px; line-height: 1.7; margin: 0 0 14px;">Here's your link to get started:<br><a href="${PRODUCT_LINK}" style="color: #E85002;">${PRODUCT_LINK}</a></p>
+              <p style="font-size: 15px; line-height: 1.7; margin: 0 0 6px;"><strong>How to set up:</strong></p>
+              <ol style="font-size: 15px; line-height: 1.8; color: #555; margin: 0 0 14px; padding-left: 20px;">
+                <li>Click the link above</li>
                 <li>Click "Duplicate" to add it to your Notion workspace</li>
                 <li>Start building your music career like a pro</li>
               </ol>
-              <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px;">If you need any help, just reply to this email. We're here for you.</p>
-              <p style="font-size: 16px; line-height: 1.6; margin: 0 0 4px;">Talk soon,</p>
-              <p style="font-size: 16px; line-height: 1.6; margin: 0 0 0px; font-weight: 600;">The ArtistOS Team</p>
-              <p style="font-size: 14px; color: #71717a; margin: 4px 0 0;">artistos.pro</p>
+              <p style="font-size: 15px; line-height: 1.7; margin: 0 0 14px;">If you need any help, just reply to this email. We're here for you.</p>
+              <p style="font-size: 15px; line-height: 1.7; margin: 0 0 0;">Talk soon,<br><strong>The ArtistOS Team</strong><br><span style="color: #999;">artistos.pro</span></p>
             </div>
           `,
         })
