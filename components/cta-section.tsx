@@ -1,3 +1,5 @@
+"use client"
+
 export function CTASection() {
   return (
     <section className="py-24 px-6" style={{ backgroundColor: "#09090B" }}>
@@ -17,7 +19,9 @@ export function CTASection() {
             <a
               href="#pricing"
               className="px-6 py-3 text-[#E85002] font-medium rounded-lg transition-colors text-sm border border-[#E85002]/60 bg-[#E85002]/10 hover:bg-[#E85002]/20"
-            >
+            onClick={() => (window as any).gtag?.('event', 'cta_click', { button_location: 'cta_section' })}
+
+              >
               Get 60% Off Today
             </a>
             <div className="flex items-center gap-2 text-sm text-zinc-500">
