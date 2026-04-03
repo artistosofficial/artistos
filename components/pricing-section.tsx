@@ -84,7 +84,9 @@ export function PricingSection() {
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full py-4 text-center text-[#E85002] font-medium rounded-lg transition-colors text-base border border-[#E85002]/60 bg-[#E85002]/10 hover:bg-[#E85002]/20"
-          >
+          onClick={() => (window as any).gtag?.('event', 'buy_button_click', { button_location: 'pricing' })}
+
+            >
             Buy Now
           </a>
 
