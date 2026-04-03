@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from "sonner"
 import './globals.css'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script'
 
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -26,7 +26,8 @@ export default function RootLayout({
         {children}
         <Analytics />
         <Toaster theme="dark" />
-        <GoogleAnalytics gaId="G-7ZQ2QXEXVE" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-7ZQ2QXEXVE" strategy="afterInteractive" />
+<Script id="google-analytics" strategy="afterInteractive">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7ZQ2QXEXVE');`}</Script>
       </body>
     </html>
   )
