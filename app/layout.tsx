@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from "sonner"
 import './globals.css'
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -24,6 +26,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <Toaster theme="dark" />
+        <GoogleAnalytics gaId="G-7ZQ2QXEXVE" />
       </body>
     </html>
   )
