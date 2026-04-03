@@ -30,7 +30,8 @@ export function Navbar() {
             <a
               href="#pricing"
               className="hidden sm:block text-sm text-[#E85002] px-4 py-2 rounded-md transition-colors border border-[#E85002]/60 bg-[#E85002]/10 hover:bg-[#E85002]/20"
-            >
+              onClick={() => (window as any).gtag?.('event', 'cta_click', { button_location: 'navbar' })}
+              >
               Get ArtistOS
             </a>
             <button
@@ -71,7 +72,7 @@ export function Navbar() {
             </a>
             <a
               href="#pricing"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => { setMenuOpen(false); (window as any).gtag?.('event', 'cta_click', { button_location: 'navbar' }); }}
               className="w-full text-sm text-[#E85002] px-4 py-3 rounded-md transition-colors border border-[#E85002]/60 bg-[#E85002]/10 hover:bg-[#E85002]/20 text-center"
             >
               Get ArtistOS
